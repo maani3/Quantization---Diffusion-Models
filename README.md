@@ -89,20 +89,21 @@ Our quantization implementations achieve significant model compression with mini
 ### Basic Quantization Example
 
 ```python
-from quantize_diffusion import SmoothQuant, AWQQuant
-from diffusers import StableDiffusionPipeline
+import AWQ
+from diffusers import DiffusionPipeline
 
 # Load base model
 model_id = "runwayml/stable-diffusion-v1-5"
-pipe = StableDiffusionPipeline.from_pretrained(model_id)
+model = AWQ.from_pretrained(model_id, dtype = torch.bfloat16)
 
 # Apply SmoothQuant
-quantizer = SmoothQuant(model=pipe.unet, bits=8)
-quantized_model = quantizer.quantize()
+model.quantize('sq', quant_config)
 
-# Generate images with quantized model
-pipe.unet = quantized_model
-image = pipe("A beautiful sunset over mountains").images[0]
+#Apply AWQquant
+model.quantize('awq', quant_config)
+
+# Generate images with quantized mod
+images = model.generate(prompts)
 ```
 
 ### AWQ Quantization
