@@ -148,7 +148,7 @@ If you use this code in your research, please cite:
 @misc{quantizing-diffusion-models,
   author = {Muhammad Mahasin Irfan},
   title = {Quantizing Diffusion Models: SmoothQuant and AWQ Implementation},
-  year = {2024},
+  year = {2025},
   publisher = {GitHub},
   url = {https://github.com/maani3/Quantizing-Diffusion-Models}
 }
