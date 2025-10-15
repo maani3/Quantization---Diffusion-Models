@@ -119,37 +119,26 @@ quantized_model = awq_quantizer.quantize()
 ```
 Quantizing-Diffusion-Models/
 ├── quantization/
-│   ├── smooth_quant.py
-│   ├── awq_quant.py
-│   └── utils.py
+│   ├── quantize
+│   ├── models
+│   └── utils
 ├── evaluation/
-│   ├── lpips_eval.py
-│   └── metrics.py
+│   ├── kl_divergence
+│   └── eval_utils
 ├── models/
-│   ├── sd15.py
+|   ├── base.py
+|   ├── bloom.py
+|   ├── clip.py
+|   ├── cohere.py
+│   ├── sd1_x.py
 │   ├── sdxl.py
 │   └── sd35.py
-├── examples/
-│   └── basic_usage.py
-├── results/
-│   ├── w4_results.png
-│   └── w8_results.png
 └── requirements.txt
 ```
 
 ## 🔬 Evaluation Metrics
 
-This implementation uses LPIPS (Learned Perceptual Image Patch Similarity) as the primary evaluation metric, which better correlates with human perception of image quality compared to traditional metrics like PSNR or SSIM.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+This implementation uses LPIPS (Learned Perceptual Image Patch Similarity) as the primary evaluation metric, which better correlates with human perception of image quality compared to traditional metrics like PSNR or SSIM. Other metrics like FID, ImageReward and CMMD will be pushed later.
 
 ## 📝 Citation
 
