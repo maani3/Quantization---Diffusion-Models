@@ -3,7 +3,7 @@ from .base import QUANTISABLE_COMPONENTS
 
 class StableDiffusion3_5(BaseAWQForDiffusion):
 
-    def __init__(self, pipeline, model_type, is_quantized, config, quant_config, refiner_path = None, access_token = "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"):
+    def __init__(self, pipeline, model_type, is_quantized, config, quant_config, refiner_path = None, access_token = None):
         if refiner_path is not None:
             raise Exception("StableDiffusion3.5 has no refiner model, if there is its not supported")
     
