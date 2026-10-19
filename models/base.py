@@ -185,7 +185,7 @@ class BaseAWQForDiffusion(BaseAWQForAllModels):
         token: Annotated[
             str,
             Doc("Access Token by Hugging_Face, required for gated models")
-        ] = "REDACTED_HF_TOKEN",
+        ] = None,
         **model_init_kwargs: Annotated[
             Dict,
             Doc(
